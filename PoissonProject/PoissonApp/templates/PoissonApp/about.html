@@ -1,0 +1,46 @@
+{% extends 'PoissonApp/base.html' %}
+
+{% block title %}
+Poisson-About
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <section class="about-information">
+        <h2>What is the Poisson distribution ?</h2>
+        <p>With the Poisson distribution we can measure the frequency of many phenomena , knowing only the average frequency of a given event.</p>
+        <a href="{% url 'index'%} "> Start Calculate</a>
+        <a class="arrow-down" href="#"><i class="fas fa-angle-double-down"></i></a>
+    </section>
+    <section class="about-mathematical-formula">
+    <h2>Mathematical formula</h2>
+    <h4>p = <span class="meter">m<sup>k</sup> * e<sup>-m</sup></span><span class="denominator">k!</span></h4>
+    <table class="formula-description">
+        <thead>
+        <tr>
+            <th>Unit</th>
+            <th>Information</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>p</td>
+            <td>quick information</td>
+        </tr>
+        <tr>
+            <td>m</td>
+            <td>Average frequency of event</td>
+        </tr>
+        <tr>
+            <td>k</td>
+            <td>Number of ...</td>
+        </tr>
+        <tr>
+            <td>e</td>
+            <td>2.718</td>
+        </tr>
+        </tbody>
+    </table>
+    </section>
+</div>
+{% endblock %}

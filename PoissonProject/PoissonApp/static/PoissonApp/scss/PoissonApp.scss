@@ -1,0 +1,26 @@
+@import 'PoissonApp/scss/base/base';
+@import 'PoissonApp/scss/index/index';
+@import 'PoissonApp/scss/about/about';
+@import 'PoissonApp/scss/calculate/calculate';
+@import 'PoissonApp/scss/variables';
+
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    font-family: 'Fira sans', sans-serif;
+}
+
+#particles-js{
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.7)), url("https://wallpaperaccess.com/full/4509995.jpg");
+    background-position: 50%, 50%;
+    background-repeat: no-repeat;
+    background-size:cover;
+}

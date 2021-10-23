@@ -1,0 +1,311 @@
+nav {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  z-index: 99;
+}
+
+nav .container {
+  display: flex;
+  max-width: 1280px;
+  height: 80px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+nav .container div {
+  margin: 0 0 0 16px;
+  font-weight: 700;
+}
+
+nav .container .hamburger {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+}
+
+nav .container .hamburger span {
+  position: relative;
+  display: block;
+  margin: 0 auto 8px auto;
+  width: 32px;
+  height: 4px;
+  background: white;
+  border-radius: 6px;
+  transition: 0.9s;
+}
+
+nav .container .hamburger:hover span:nth-child(2) {
+  transform: translateX(10px);
+  background-color: #3db320;
+}
+
+nav .container .is-active span:nth-child(1) {
+  transform: translate(0, 13px) rotate(45deg);
+  background-color: #3db320;
+}
+
+nav .container .is-active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+nav .container .is-active span:nth-child(3) {
+  transform: translate(-2px, -11px) rotate(-45deg);
+  background-color: #3db320;
+}
+
+nav .container .menu {
+  display: none;
+}
+
+nav .container .menu.mobile-menu {
+  padding: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: space-around;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: black;
+  transition: 0.9s;
+}
+
+nav .container .menu.mobile-menu li {
+  list-style: none;
+  margin: 1rem auto;
+}
+
+nav .container .menu.mobile-menu li a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  transition: 0.9s;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+nav .container .menu.mobile-menu li a::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  background-color: white;
+  width: 0;
+  height: 1px;
+  transition: 0.9s;
+}
+
+nav .container .menu.mobile-menu li a:hover::after {
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+  nav .container .hamburger {
+    display: none;
+  }
+  nav .container .menu {
+    display: flex;
+    margin: 0;
+  }
+  nav .container .menu li {
+    list-style: none;
+  }
+  nav .container .menu li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    transition: 0.9s;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+  nav .container .menu li a::after {
+    content: '';
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    height: 1px;
+    width: 0;
+    transition: 0.5s;
+  }
+  nav .container .menu li a:hover::after {
+    background-color: white;
+    width: 80%;
+  }
+}
+
+.content {
+  z-index: 1;
+  width: 90%;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.content .arrow-down {
+  width: 50px;
+  border-radius: 50px;
+}
+
+.content h2 {
+  margin-top: 2rem;
+  z-index: 1;
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  letter-spacing: 5px;
+}
+
+.content p {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+
+.content a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  width: 140px;
+  padding: 1rem;
+  margin: 1rem 1rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: 0.9s;
+}
+
+.content a:hover {
+  color: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+}
+
+.content section {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content section h2 {
+  font-size: 2rem;
+}
+
+h4 {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+}
+
+h4 .meter {
+  position: relative;
+  top: -21px;
+  left: 10px;
+}
+
+h4 .meter::after {
+  content: '';
+  top: 100%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+
+h4 .denominator {
+  position: relative;
+  top: 5px;
+  left: -40px;
+}
+
+.formula-description {
+  color: white;
+  margin: 0 auto 3rem auto;
+  border-collapse: collapse;
+  width: 85%;
+}
+
+.formula-description thead th {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.formula-description thead th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.formula-description thead th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.formula-description tbody td {
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .formula-description {
+    width: 50%;
+  }
+}
+
+section form label {
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+section form .form-select {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+section form .form-select optgroup[label] {
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+section form .form-select optgroup[label] option {
+  font-size: 1.5rem;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Fira sans', sans-serif;
+}
+
+#particles-js {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url("https://wallpaperaccess.com/full/4509995.jpg");
+  background-position: 50%, 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

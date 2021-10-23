@@ -1,0 +1,31 @@
+{% extends 'PoissonApp/base.html' %}
+
+{% block title %}
+    Calculate
+{% endblock %}
+{% block content %}
+    <div class="content">
+        <section>
+        <h2>Start Calculate</h2>
+        <p>First choose below two leagues that you intrested</p>
+            <a class="arrow-down" href="#"><i class="fas fa-angle-double-down"></i></a>
+        </section>
+        <section>
+            <h2>Click Submit when You decide</h2>
+            {% if not form2 %}
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" name="btnform1" value="Submit">
+                </form>
+            {% else %}
+            <h2>Sprawdzenie czy ponowny render jest</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form2 }}
+                    <input type="submit" name="btnform2" value="Submit">
+                </form>
+            {% endif %}
+        </section>
+    </div>
+{% endblock %}

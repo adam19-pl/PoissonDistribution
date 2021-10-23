@@ -1,0 +1,27 @@
+section{
+    form
+    {
+    label
+    {
+    color: white;
+    margin-top:1rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    }
+        .form-select{
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+
+            optgroup[label]
+            {
+            font-size: 2rem;
+            background: rgba(0,0,0,0.8);
+
+                option
+                {
+                font-size:1.5rem;
+                }
+            }
+        }
+    }
+}

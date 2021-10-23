@@ -1,0 +1,16 @@
+{% extends 'PoissonApp/base.html' %}
+{% block title %}
+Home Page
+{% endblock %}
+
+{%  block content %}
+<div class="content">
+    <h2>Poisson App</h2>
+    <p>
+        This is a simple Poisson prediction App.
+        You can check footbal teams condition and analyze the statistics.
+    </p>
+    <a href="{% url 'calculate' %}">Run</a>
+    <a href="{% url 'about' %}">Read more</a>
+</div>
+{% endblock %}
