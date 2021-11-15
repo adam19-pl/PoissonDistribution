@@ -1,30 +1,245 @@
 {% extends 'PoissonApp/base.html' %}
 
 {% block title %}
-    Calculate
+Calculate
 {% endblock %}
 {% block content %}
-    <div class="content">
-    {% if form2 %}
-        <section>
-        <h2>Calculate - step 2 </h2>
-        <p>Now choose below two teams that you intrested</p>
-            <a class="arrow-down" href="#"><i class="fas fa-angle-double-down"></i></a>
-        </section>
-        <section>
-            <h2>Click Submit when You decide</h2>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form2 }}
-                    <input type="submit" value="Submit">
-                </form>
-        </section>
-    {% else %}
-     <section>
-         <h2> You didn't chose leagues...</h2>
-         <p> Please go back to the beginning</p>
-         <a href="{% url 'calculate' %}">Calculate</a>
-     </section>
-    {% endif %}
-    </div>
+<div class="content">
+    <section>
+
+        <div class="information-container">
+        {% if first_team and second_team %}
+            <div class="first-team">
+                <img src="{{ first_team_information.team_logo }}">
+                <p>(Home)</p>
+                <h2>{{ first_team_information.team }}</h2>
+                <p>{{ first_team_information.country }} <img src="{{first_team_information.country_flag }}"
+                                                             style="width:30px;"> / {{ first_team_information.league }}
+                    <img src="{{first_team_information.league_logo }}" style="width:30px;"></p>
+                <p>Poisson distribution - Goals</p>
+                <div style="position: relative; width: 80%; height: 300px;" class="m-auto">
+                    <canvas id="first_team"></canvas>
+                </div>
+            </div>
+            <h2 class="mt-3 mb-3">VS</h2>
+            <div class="second-team">
+                <img src="{{ second_team_information.team_logo }}">
+                <p>(Away)</p>
+                <h2>{{ second_team_information.team }}</h2>
+                <p>{{ second_team_information.country }} <img src="{{second_team_information.country_flag }}"
+                                                              style="width:30px;"> / {{ second_team_information.league }}
+                    <img src="{{second_team_information.league_logo }}" style="width:30px;"></p>
+                <p>Poisson distribution - Goals </p>
+                <div style="position: relative; width: 80%; height: 300px;" class="m-auto">
+                    <canvas id="second_team"></canvas>
+                </div>
+            </div>
+            {% else %}
+            <h2> You didn't chose leagues...</h2>
+            <p> Please go back to the beginning</p>
+            <a href="{% url 'calculate' %}">Calculate</a>
+            {% endif %}
+        </div>
+        {% if home_win and draw and against_win %}
+            <h2>Probability of winning</h2>
+            <p>(approximately)</p>
+            <div class="match-result-info d-flex justify-content-around">
+                <div class="home-win-info" style="width:33%;">
+                    <img src="{{ first_team_information.team_logo }}">
+                    <p>Home</p>
+                    <p>{{  home_win }}%</p>
+                </div>
+                <div class="draw-info" style="width:33%; margin: auto auto 0 auto;">
+                    <p> Draw </p>
+                    <p>{{  draw }}%</p>
+                </div>
+                <div class="against-win-info" style="width:33%;">
+                    <img src="{{ second_team_information.team_logo }}">
+                    <p>Away</p>
+                    <p>{{  against_win }}%</p>
+                </div>
+            </div>
+            <div class="match-result d-flex justify-content-center">
+                <span class="home-win" style="width: {{ home_win }}% ;"></span>
+                <span class="draw" style="width: {{ draw }}% ;"></span>
+                <span class="against-win" style="width: {{ against_win }}%;"></span>
+            </div>
+            <a href="{% url 'calculate'%}">Calculate Again</a>
+        {% endif %}
+    </section>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+const X_TITLE_TEXT = 'Number of goals';
+const Y_TITLE_TEXT = 'Percent chance';
+const COLOR_ONE = 'rgba(255, 255, 255,0.8)';
+const COLOR_TWO = 'rgb(26, 164, 199)';
+const VISIBLE = false;
+const FONT_FAMILY = 'Times';
+const FONT_SIZE = 16;
+
+const labels = {{ k_elements }}
+
+const dataFirstTeam = {
+  labels: labels,
+  datasets: [
+  {
+    label: 'All Season',
+    backgroundColor: COLOR_ONE,
+    borderColor: COLOR_TWO,
+    data: {{ first_team }},
+  },
+  {
+    label: '5 last weeks form',
+    backgroundColor: COLOR_TWO,
+    borderColor: COLOR_TWO,
+    data: {{ first_team_from_to }},
+  }
+  ]
+};
+
+const dataSecondTeam = {
+  labels: labels,
+  datasets: [{
+    label: 'All Season',
+    backgroundColor: COLOR_ONE,
+    borderColor: COLOR_TWO,
+    data: {{ second_team }},
+  },
+  {
+    label: '5 last weeks form',
+    backgroundColor: COLOR_TWO,
+    borderColor: COLOR_TWO,
+    data: {{ second_team_from_to }},
+  }
+  ]
+};
+
+const configFirstTeam = {
+  type: 'bar',
+  data: dataFirstTeam,
+  options: {
+    maintainAspectRatio:false,
+    scales:
+    {
+        x:{
+            ticks:
+                {
+                color: COLOR_ONE,
+                },
+            grid:
+                {
+                display: VISIBLE,
+                },
+            title:
+                {
+                display: true,
+                text: X_TITLE_TEXT,
+                color: COLOR_ONE,
+                align: 'start',
+                font:
+                    {
+                    family: FONT_FAMILY,
+                    style: 'normal',
+                    size: FONT_SIZE,
+                    },
+                },
+        },
+        y:{
+            ticks:
+                {
+                color: COLOR_ONE,
+                },
+            grid:
+                {
+                display: VISIBLE,
+                },
+            title:
+                {
+                display: true,
+                text: Y_TITLE_TEXT,
+                color: COLOR_ONE,
+                align: 'start',
+                font:
+                    {
+                    family: FONT_FAMILY,
+                    style: 'normal',
+                    size: FONT_SIZE,
+                    },
+                },
+        },
+    },
+  }
+};
+
+const configSecondTeam = {
+  type: 'bar',
+  data: dataSecondTeam,
+  options: {
+  maintainAspectRatio:false,
+  scales:
+    {
+        x:{
+            ticks:
+                {
+                color: COLOR_ONE,
+                },
+            grid:
+                {
+                display: VISIBLE,
+                },
+            title:
+                {
+                display: true,
+                text: X_TITLE_TEXT,
+                color: COLOR_ONE,
+                align: 'start',
+                font:
+                    {
+                    family: FONT_FAMILY,
+                    style: 'normal',
+                    size: FONT_SIZE,
+                    },
+                },
+        },
+        y:{
+            ticks:
+                {
+                color: COLOR_ONE,
+                },
+            grid:
+                {
+                display: VISIBLE,
+                },
+            title:
+                {
+                display: true,
+                text: Y_TITLE_TEXT,
+                color: COLOR_ONE,
+                align: 'start',
+                font:
+                    {
+                    family: FONT_FAMILY,
+                    style: 'normal',
+                    size: FONT_SIZE,
+                    },
+                },
+        },
+    },
+  }
+};
+
+const first_team = new Chart(
+document.getElementById('first_team'),
+configFirstTeam
+);
+
+const second_team = new Chart(
+document.getElementById('second_team'),
+configSecondTeam
+);
+
+
+</script>
 {% endblock %}

@@ -1,10 +1,17 @@
 .content
 {
+    .about-information
+    {
+        a
+        {
+        margin-bottom: 0px;
+        }
+    }
 
     section
     {
         width: 100%;
-        height: calc(100vh - 80px);
+        min-height: calc(100vh - 80px);
         display: flex;
         flex-direction: column;
         justify-content:center;
@@ -13,6 +20,14 @@
         h2
         {
         font-size:2rem;
+        }
+
+    }
+    .about-mathematical-formula
+    {
+        h2
+        {
+        margin-bottom: 2rem;
         }
     }
 }
@@ -48,6 +63,7 @@ margin-bottom: 3rem;
         left: -40px;
     }
 }
+
 
 .formula-description
 {

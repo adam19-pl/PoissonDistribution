@@ -147,3 +147,64 @@ nav .container .menu.mobile-menu li a:hover::after {
     width: 80%;
   }
 }
+
+footer {
+  min-height: 100px;
+  background-color: black;
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .contact-list {
+  margin: 2rem auto;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .contact-list li {
+  list-style: none;
+}
+
+footer .contact-list li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin: 0.5rem 1rem;
+}
+
+footer .contact-list li a::after {
+  content: '';
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: white;
+  transition: 0.5s;
+}
+
+footer .contact-list li a:hover::after {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  footer .contact-list {
+    flex-direction: row;
+  }
+}
+
+footer p {
+  color: white;
+}
+
+footer p a {
+  text-decoration: none;
+  color: white;
+}

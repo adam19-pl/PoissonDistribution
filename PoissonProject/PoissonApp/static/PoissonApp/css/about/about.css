@@ -1,6 +1,10 @@
+.content .about-information a {
+  margin-bottom: 0px;
+}
+
 .content section {
   width: 100%;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,6 +13,10 @@
 
 .content section h2 {
   font-size: 2rem;
+}
+
+.content .about-mathematical-formula h2 {
+  margin-bottom: 2rem;
 }
 
 h4 {

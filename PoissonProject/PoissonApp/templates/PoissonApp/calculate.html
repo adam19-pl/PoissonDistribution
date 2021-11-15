@@ -1,31 +1,34 @@
 {% extends 'PoissonApp/base.html' %}
 
 {% block title %}
-    Calculate
+Calculate
 {% endblock %}
 {% block content %}
-    <div class="content">
-        <section>
+<div class="content">
+    <section>
+        {% if not error_api %}
         <h2>Start Calculate</h2>
         <p>First choose below two leagues that you intrested</p>
-            <a class="arrow-down" href="#"><i class="fas fa-angle-double-down"></i></a>
-        </section>
-        <section>
-            <h2>Click Submit when You decide</h2>
-            {% if not form2 %}
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form }}
-                    <input type="submit" name="btnform1" value="Submit">
-                </form>
-            {% else %}
-            <h2>Sprawdzenie czy ponowny render jest</h2>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form2 }}
-                    <input type="submit" name="btnform2" value="Submit">
-                </form>
-            {% endif %}
-        </section>
-    </div>
+        <a class="arrow-down" href="#form-section"><i class="fas fa-angle-double-down"></i></a>
+    </section>
+    <section id="form-section">
+        {% if not form2 %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" name="btnform1" value="Submit">
+            </form>
+        {% else %}
+            <form method="post">
+                {% csrf_token %}
+                {{ form2 }}
+                <input type="submit" name="btnform2" value="Submit">
+            </form>
+        {% endif %}
+        {% else %}
+        <p> {{ error_api }}</p>
+        <a href="{% url 'index'%}"> Home Page</a>
+        {% endif %}
+    </section>
+</div>
 {% endblock %}

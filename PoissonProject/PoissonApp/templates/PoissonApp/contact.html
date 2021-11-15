@@ -1,0 +1,20 @@
+{% extends 'PoissonApp/base.html' %}
+{% block title %}
+Home Page
+{% endblock %}
+
+{%  block content %}
+<div class="content">
+    {% if message_name %}
+        <p> Thanks {{ message_name.title }} for your message!</p>
+        <a href="{% url 'index' %}">Home</a>
+    {% else %}
+    <h2 class="mb-3">Contact</h2>
+    <form class="contact-form" action="{% url 'contact' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input class="contact-form-button" type="submit" value="Send">
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

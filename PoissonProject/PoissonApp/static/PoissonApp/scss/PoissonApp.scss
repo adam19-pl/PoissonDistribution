@@ -2,8 +2,9 @@
 @import 'PoissonApp/scss/index/index';
 @import 'PoissonApp/scss/about/about';
 @import 'PoissonApp/scss/calculate/calculate';
+@import 'PoissonApp/scss/calculate2/calculate2';
+@import 'PoissonApp/scss/contact/contact';
 @import 'PoissonApp/scss/variables';
-
 
 *{
     margin:0px;
@@ -15,7 +16,7 @@
 #particles-js{
     width: 100%;
     min-height: 100vh;
-    position: absolute;
+    position: relative;
     display:flex;
     justify-content:center;
     align-items:center;

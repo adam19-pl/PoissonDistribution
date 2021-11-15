@@ -148,6 +148,67 @@ nav .container .menu.mobile-menu li a:hover::after {
   }
 }
 
+footer {
+  min-height: 100px;
+  background-color: black;
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .contact-list {
+  margin: 2rem auto;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .contact-list li {
+  list-style: none;
+}
+
+footer .contact-list li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin: 0.5rem 1rem;
+}
+
+footer .contact-list li a::after {
+  content: '';
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: white;
+  transition: 0.5s;
+}
+
+footer .contact-list li a:hover::after {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  footer .contact-list {
+    flex-direction: row;
+  }
+}
+
+footer p {
+  color: white;
+}
+
+footer p a {
+  text-decoration: none;
+  color: white;
+}
+
 .content {
   z-index: 1;
   width: 90%;
@@ -156,7 +217,7 @@ nav .container .menu.mobile-menu li a:hover::after {
 }
 
 .content .arrow-down {
-  width: 50px;
+  width: 45px;
   border-radius: 50px;
 }
 
@@ -181,8 +242,8 @@ nav .container .menu.mobile-menu li a:hover::after {
   display: inline-block;
   text-decoration: none;
   color: white;
-  width: 140px;
-  padding: 1rem;
+  width: 100px;
+  padding: 0.5rem;
   margin: 1rem 1rem;
   border: 1px solid white;
   border-radius: 4px;
@@ -197,9 +258,13 @@ nav .container .menu.mobile-menu li a:hover::after {
   box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
 }
 
+.content .about-information a {
+  margin-bottom: 0px;
+}
+
 .content section {
   width: 100%;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -208,6 +273,10 @@ nav .container .menu.mobile-menu li a:hover::after {
 
 .content section h2 {
   font-size: 2rem;
+}
+
+.content .about-mathematical-formula h2 {
+  margin-bottom: 2rem;
 }
 
 h4 {
@@ -269,25 +338,281 @@ h4 .denominator {
   }
 }
 
-section form label {
+.content section form label {
   color: white;
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 2rem;
 }
 
-section form .form-select {
+.content section form .form-select {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
 
-section form .form-select optgroup[label] {
+.content section form .form-select optgroup[label] {
   font-size: 2rem;
   background: rgba(0, 0, 0, 0.8);
 }
 
-section form .form-select optgroup[label] option {
+.content section form .form-select optgroup[label] option {
   font-size: 1.5rem;
+}
+
+.content section form .form-select option {
+  background: rgba(0, 0, 0, 0.8);
+  font-size: 1.5rem;
+}
+
+.content section form input {
+  background: transparent;
+  color: white;
+  width: 100px;
+  padding: 0.5rem;
+  margin: 3rem 1rem 2rem 1rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: 0.9s;
+}
+
+.content section form input:hover {
+  color: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+}
+
+.content section .information-container {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.content section .information-container .first-team {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.content section .information-container .first-team img {
+  width: 80px;
+}
+
+.content section .information-container .first-team h2 {
+  font-size: 2rem;
+  margin: 0 auto 0.3rem auto;
+}
+
+.content section .information-container .first-team p {
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+.content section .information-container .second-team {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.content section .information-container .second-team img {
+  width: 80px;
+}
+
+.content section .information-container .second-team h2 {
+  font-size: 2rem;
+  margin: 0 auto 0.3rem auto;
+}
+
+.content section .information-container .second-team p {
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content section .information-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .content section .information-container .first-team {
+    width: 40%;
+  }
+  .content section .information-container .second-team {
+    width: 40%;
+  }
+}
+
+.content section .match-result-info {
+  width: 80%;
+}
+
+.content section .match-result-info .home-win-info {
+  width: 33%;
+}
+
+.content section .match-result-info .home-win-info img {
+  width: 60px;
+}
+
+.content section .match-result-info .home-win-info p {
+  font-size: 0.7rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.content section .match-result-info .draw-info {
+  width: 33%;
+}
+
+.content section .match-result-info .draw-info p {
+  font-size: 0.7rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.content section .match-result-info .against-win-info {
+  width: 33%;
+}
+
+.content section .match-result-info .against-win-info img {
+  width: 60px;
+}
+
+.content section .match-result-info .against-win-info p {
+  font-size: 0.7rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .content section .match-result-info .home-win-info img,
+.content section .match-result-info .draw-info img,
+.content section .match-result-info .against-win-info img {
+    width: 80px;
+  }
+  .content section .match-result-info .home-win-info p,
+.content section .match-result-info .draw-info p,
+.content section .match-result-info .against-win-info p {
+    font-size: 1rem;
+  }
+}
+
+.content section .match-result {
+  width: 80%;
+}
+
+.content section .match-result .home-win {
+  display: inline-block;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.content section .match-result .draw {
+  display: inline-block;
+  height: 20px;
+  background-color: grey;
+}
+
+.content section .match-result .against-win {
+  display: inline-block;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.content section h2 {
+  margin-bottom: 0;
+}
+
+.content section p {
+  margin-bottom: 0rem;
+}
+
+.content section a {
+  width: 150px;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.contact-form input {
+  color: white;
+  text-align: center;
+  margin: 0 auto 1rem auto;
+  height: 3rem;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-bottom: 2px solid #adadad;
+  outline: none;
+  transition: 0.5s;
+}
+
+.contact-form input:focus {
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid #00bbff;
+}
+
+@media only screen and (max-width: 402px) {
+  .contact-form input {
+    width: 80%;
+  }
+}
+
+.contact-form .contact-form-button {
+  background: transparent;
+  color: white;
+  width: 100px;
+  padding: 0.5rem;
+  margin: 3rem auto 2rem auto;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: 0.9s;
+}
+
+.contact-form .contact-form-button:hover {
+  color: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+}
+
+.contact-form textarea {
+  color: white;
+  margin: 0 auto 1rem auto;
+  text-align: center;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-bottom: 2px solid #adadad;
+  outline: none;
+  transition: 0.5s;
+}
+
+.contact-form textarea:focus {
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid #00bbff;
+}
+
+@media only screen and (max-width: 402px) {
+  .contact-form textarea {
+    width: 80%;
+  }
 }
 
 * {
@@ -300,7 +625,7 @@ section form .form-select optgroup[label] option {
 #particles-js {
   width: 100%;
   min-height: 100vh;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
