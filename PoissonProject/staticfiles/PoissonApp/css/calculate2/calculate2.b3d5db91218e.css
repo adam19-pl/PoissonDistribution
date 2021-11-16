@@ -1,0 +1,153 @@
+.content section .information-container {
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.content section .information-container .first-team {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.content section .information-container .first-team img {
+  width: 80px;
+}
+
+.content section .information-container .first-team h2 {
+  font-size: 2rem;
+  margin: 0 auto 0.3rem auto;
+}
+
+.content section .information-container .first-team p {
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+.content section .information-container .second-team {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.content section .information-container .second-team img {
+  width: 80px;
+}
+
+.content section .information-container .second-team h2 {
+  font-size: 2rem;
+  margin: 0 auto 0.3rem auto;
+}
+
+.content section .information-container .second-team p {
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .content section .information-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+  .content section .information-container .first-team {
+    width: 40%;
+  }
+  .content section .information-container .second-team {
+    width: 40%;
+  }
+}
+
+.content section .match-result-info {
+  width: 80%;
+}
+
+.content section .match-result-info .home-win-info {
+  width: 33%;
+}
+
+.content section .match-result-info .home-win-info img {
+  width: 60px;
+}
+
+.content section .match-result-info .home-win-info p {
+  font-size: 0.7rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.content section .match-result-info .draw-info {
+  width: 33%;
+}
+
+.content section .match-result-info .draw-info p {
+  font-size: 0.7rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.content section .match-result-info .against-win-info {
+  width: 33%;
+}
+
+.content section .match-result-info .against-win-info img {
+  width: 60px;
+}
+
+.content section .match-result-info .against-win-info p {
+  font-size: 0.7rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .content section .match-result-info .home-win-info img,
+.content section .match-result-info .draw-info img,
+.content section .match-result-info .against-win-info img {
+    width: 80px;
+  }
+  .content section .match-result-info .home-win-info p,
+.content section .match-result-info .draw-info p,
+.content section .match-result-info .against-win-info p {
+    font-size: 1rem;
+  }
+}
+
+.content section .match-result {
+  width: 80%;
+}
+
+.content section .match-result .home-win {
+  display: inline-block;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.content section .match-result .draw {
+  display: inline-block;
+  height: 20px;
+  background-color: grey;
+}
+
+.content section .match-result .against-win {
+  display: inline-block;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.content section h2 {
+  margin-bottom: 0;
+}
+
+.content section p {
+  margin-bottom: 0rem;
+}
+
+.content section a {
+  width: 150px;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}

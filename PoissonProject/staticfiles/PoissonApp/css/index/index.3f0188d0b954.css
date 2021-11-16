@@ -1,0 +1,48 @@
+.content {
+  z-index: 1;
+  width: 90%;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.content .arrow-down {
+  width: 45px;
+  border-radius: 50px;
+}
+
+.content h2 {
+  margin-top: 2rem;
+  z-index: 1;
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  letter-spacing: 5px;
+}
+
+.content p {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+
+.content a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  width: 100px;
+  padding: 0.5rem;
+  margin: 1rem 1rem;
+  border: 1px solid white;
+  border-radius: 4px;
+  transition: 0.9s;
+}
+
+.content a:hover {
+  color: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+}

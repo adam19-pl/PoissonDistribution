@@ -1,0 +1,168 @@
+.content
+{
+    section
+    {
+        .information-container
+        {
+        width: 100%;
+        margin-top:3rem;
+            .first-team
+            {
+             width: 90%;
+             margin: 0 auto;
+                img
+                {
+                width: 80px;
+                }
+                h2
+                {
+                font-size:2rem;
+                margin: 0 auto 0.3rem auto;
+                }
+                p
+                {
+                font-size: 0.8rem;
+                margin: 0 auto;
+                }
+            }
+            .second-team
+            {
+            width: 90%;
+            margin: 0 auto;
+                img
+                {
+                width: 80px;
+                }
+                h2
+                {
+                font-size:2rem;
+                margin: 0 auto 0.3rem auto;
+                }
+                p
+                {
+                font-size: 0.8rem;
+                margin: 0 auto;
+                }
+            }
+
+            @media(min-width:768px)
+            {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items:center;
+            width: 90%;
+                .first-team
+                {
+                width: 40%;
+                }
+                .second-team
+                {
+                width: 40%;
+                }
+            }
+        }
+        .match-result-info
+        {
+        width: 80%;
+            .home-win-info
+            {
+            width: 33%;
+                img
+                {
+                width:60px;
+                }
+                p
+                {
+                font-size: 0.7rem;
+                margin-bottom:0;
+                margin-top:0;
+                }
+            }
+            .draw-info
+            {
+            width: 33%;
+                p
+                {
+                font-size: 0.7rem;
+                margin-bottom:0;
+                margin-top:0;
+                }
+            }
+            .against-win-info
+            {
+            width: 33%;
+                img
+                {
+                width:60px;
+                }
+                p
+                {
+                font-size: 0.7rem;
+                margin-bottom:0;
+                margin-top:0;
+                }
+            }
+            @media(min-width:768px)
+            {
+            .home-win-info,
+            .draw-info,
+            .against-win-info,
+                {
+                    img
+                    {
+                    width:80px;
+                    }
+                    p
+                    {
+                    font-size:1rem;
+                    }
+                }
+            }
+        }
+
+        .match-result
+        {
+        width: 80%;
+
+            .home-win
+            {
+            display:inline-block;
+            height: 20px;
+            background-color: rgba(255,255,255,0.9);
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            }
+            .draw
+            {
+            display:inline-block;
+            height: 20px;
+            background-color: grey;
+            }
+
+            .against-win
+            {
+            display:inline-block;
+            height: 20px;
+            background-color: rgba(255,255,255,0.9);
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            }
+        }
+        h2
+        {
+            margin-bottom: 0;
+        }
+        p
+        {
+        margin-bottom: 0rem;
+        }
+        a
+        {
+        width: 150px;
+        margin-top:2rem;
+        margin-bottom: 4rem;
+        }
+    }
+
+}

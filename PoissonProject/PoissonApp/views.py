@@ -170,7 +170,7 @@ def calculate(request):
                 print(first_team_information_all_season)
                 print('**************************')
                 print(second_team_information_all_season)
-                if len(first_team_information_all_season['error']) >= 1 or len(second_team_information_all_season['errors']) >=1 :
+                if len(first_team_information_all_season['errors']) >= 1 or len(second_team_information_all_season['errors']) >=1 :
                     return render(request, 'PoissonApp/calculate.html', {
                         'error_api': '''Sorry, the maximum number of the requests reach the day limit...
                         Try again tomorrow or send me some money to upgrade the plan ;) ''', })

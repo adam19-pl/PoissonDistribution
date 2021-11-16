@@ -1,0 +1,210 @@
+nav {
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  z-index: 99;
+}
+
+nav .container {
+  display: flex;
+  max-width: 1280px;
+  height: 80px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+nav .container div {
+  margin: 0 0 0 16px;
+  font-weight: 700;
+}
+
+nav .container .hamburger {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  width: 64px;
+  height: 64px;
+}
+
+nav .container .hamburger span {
+  position: relative;
+  display: block;
+  margin: 0 auto 8px auto;
+  width: 32px;
+  height: 4px;
+  background: white;
+  border-radius: 6px;
+  transition: 0.9s;
+}
+
+nav .container .hamburger:hover span:nth-child(2) {
+  transform: translateX(10px);
+  background-color: #3db320;
+}
+
+nav .container .is-active span:nth-child(1) {
+  transform: translate(0, 13px) rotate(45deg);
+  background-color: #3db320;
+}
+
+nav .container .is-active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(15px);
+}
+
+nav .container .is-active span:nth-child(3) {
+  transform: translate(-2px, -11px) rotate(-45deg);
+  background-color: #3db320;
+}
+
+nav .container .menu {
+  display: none;
+}
+
+nav .container .menu.mobile-menu {
+  padding: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: space-around;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: black;
+  transition: 0.9s;
+}
+
+nav .container .menu.mobile-menu li {
+  list-style: none;
+  margin: 1rem auto;
+}
+
+nav .container .menu.mobile-menu li a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  transition: 0.9s;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+nav .container .menu.mobile-menu li a::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  background-color: white;
+  width: 0;
+  height: 1px;
+  transition: 0.9s;
+}
+
+nav .container .menu.mobile-menu li a:hover::after {
+  width: 80%;
+}
+
+@media (min-width: 768px) {
+  nav .container .hamburger {
+    display: none;
+  }
+  nav .container .menu {
+    display: flex;
+    margin: 0;
+  }
+  nav .container .menu li {
+    list-style: none;
+  }
+  nav .container .menu li a {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    transition: 0.9s;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+  nav .container .menu li a::after {
+    content: '';
+    position: absolute;
+    top: 90%;
+    left: 10%;
+    height: 1px;
+    width: 0;
+    transition: 0.5s;
+  }
+  nav .container .menu li a:hover::after {
+    background-color: white;
+    width: 80%;
+  }
+}
+
+footer {
+  min-height: 100px;
+  background-color: black;
+  border-top: 3px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .contact-list {
+  margin: 2rem auto;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer .contact-list li {
+  list-style: none;
+}
+
+footer .contact-list li a {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: white;
+  margin: 0.5rem 1rem;
+}
+
+footer .contact-list li a::after {
+  content: '';
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: white;
+  transition: 0.5s;
+}
+
+footer .contact-list li a:hover::after {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  footer .contact-list {
+    flex-direction: row;
+  }
+}
+
+footer p {
+  color: white;
+}
+
+footer p a {
+  text-decoration: none;
+  color: white;
+}

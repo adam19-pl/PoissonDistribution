@@ -1,0 +1,70 @@
+    .contact-form{
+    display: flex;
+    flex-direction: column;
+
+        label{
+        color: white;
+        text-transform:uppercase;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        }
+        input{
+            color:white;
+            text-align: center;
+            margin: 0 auto 1rem auto ;
+            height: 3rem;
+            width: 60%;
+            background: rgba(0,0,0,0.1);
+            border: none;
+            border-bottom: 2px solid #adadad;
+            outline:none;
+            transition: 0.5s;
+                &:focus{
+                background: rgba(0,0,0,0.5);
+                border-bottom: 2px solid #00bbff;
+                }
+        @media only screen and (max-width: 402px) {
+               width: 80%;
+                }
+        }
+
+        .contact-form-button
+        {
+            background:transparent;
+            color: white;
+            width: 100px;
+            padding: 0.5rem;
+            margin: 3rem auto 2rem auto;
+            border: 1px solid white;
+            border-radius: 4px;
+            transition: 0.9s;
+                &:hover
+                {
+                    color: rgba(0,0,0,0.9);
+                    background: rgba(255,255,255,0.8);
+                    -webkit-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+                    -moz-box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+                    box-shadow: 0px 0px 50px 3px rgba(255, 255, 255, 0.5);
+                }
+        }
+
+        textarea{
+            color:white;
+            margin: 0 auto 1rem auto ;
+            text-align: center;
+            width: 60%;
+            background: rgba(0,0,0,0.1);
+            border: none;
+            border-bottom: 2px solid #adadad;
+            outline:none;
+            transition: 0.5s;
+            &:focus{
+                background: rgba(0,0,0,0.5);
+                border-bottom: 2px solid #00bbff;
+            }
+
+        @media only screen and (max-width: 402px) {
+               width: 80%;
+            }
+        }
+    }
