@@ -1,7 +1,7 @@
 from django import forms
 import json
 leagues = {}
-file_location = "../PoissonProject/PoissonApp/all_leagues.json"
+file_location = "/app/PoissonProject/PoissonApp/all_leagues.json"
 countries = []
 with open(file_location) as data_file:
     data = json.load(data_file)
