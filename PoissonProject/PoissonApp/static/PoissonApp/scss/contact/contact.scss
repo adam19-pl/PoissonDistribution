@@ -1,7 +1,16 @@
     .contact-form{
     display: flex;
     flex-direction: column;
-
+        .errorlist
+        {
+        padding: 0;
+        list-style: none;
+            li
+            {
+            font-weight: 700;
+            color: #ff2036;
+            }
+        }
         label{
         color: white;
         text-transform:uppercase;
