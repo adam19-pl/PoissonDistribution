@@ -1,1 +1,1 @@
-web: gunicorn PoissonProject.PoissonProject.wsgi:application --log-file -
+web: gunicorn PoissonProject.wsgi:application --python PoissonProject --log-file - --log-level debug --preload --workers 1
