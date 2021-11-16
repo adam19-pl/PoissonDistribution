@@ -1,1 +1,1 @@
-web: gunicorn PoissonProject.wsgi --log-file -
+web: gunicorn PoissonApp.wsgi --log-file -
