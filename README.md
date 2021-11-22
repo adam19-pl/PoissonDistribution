@@ -1,7 +1,7 @@
 # PoissonDistribution
 ![Screenshot](PoissonApp2.png)
 This is the `PoissonDistribution` written in `Python` with the webframework `Django`.
-
+You can predict match result.
 ## Used Tools
 
 - `Python`
